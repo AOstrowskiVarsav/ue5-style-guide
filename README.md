@@ -122,10 +122,9 @@ If you have made a notable fork or translation that is not suitable for a pull r
     - [3.3.1.3 Info Functions Returning Bool Should Ask Questions](#bp-funcs-naming-bool)
     - [3.3.1.4 Event Handlers and Dispatchers Should Start With `On`](#bp-funcs-naming-eventhandlers)
     - [3.3.1.5 Remote Procedure Calls Should Be Prefixed With Target](#bp-funcs-naming-rpcs)
-    - [3.3.2 All Functions Must Have Return Nodes](#bp-funcs-return)
-    - [3.3.3 No Function Should Have More Than 50 Nodes](#bp-graphs-funcs-node-limit)
-    - [3.3.4 All Public Functions Should Have A Description](#bp-graphs-funcs-description)
-    - [3.3.5 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name](#bp-graphs-funcs-plugin-category)
+    - [3.3.2 No Function Should Have More Than 50 Nodes](#bp-graphs-funcs-node-limit)
+    - [3.3.3 All Public Functions Should Have A Description](#bp-graphs-funcs-description)
+    - [3.3.4 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name](#bp-graphs-funcs-plugin-category)
   - [3.4 Blueprint Graphs](#bp-graphs)
     - [3.4.1 No Spaghetti](#bp-graphs-spaghetti)
     - [3.4.2 Align Wires Not Nodes](#bp-graphs-align-wires)
@@ -1165,20 +1164,7 @@ Bad examples:
 * `AllNotifyDeath` - Use `Multicast`, never `All`.
 * `ClientWeapon` - No verb, ambiguous.
 
-
 <a name="3.3.2"></a>
-<a name="bp-funcs-return"></a>
-#### 3.3.2 All Functions Must Have Return Nodes
-
-All functions must have return nodes, no exceptions.
-
-Return nodes explicitly note that a function has finished its execution. In a world where blueprints can be filled with `Sequence`, `ForLoopWithBreak`, and backwards reroute nodes, explicit execution flow is important for readability, maintenance, and easier debugging.
-
-The Blueprint compiler is able to follow the flow of execution and will warn you if there is a branch of your code with an unhandled return or bad flow if you use return nodes.
-
-In situations like where a programmer may add a pin to a Sequence node or add logic after a for loop completes but the loop iteration might return early, this can often result in an accidental error in code flow. The warnings the Blueprint compiler will alert everyone of these issues immediately.
-
-<a name="3.3.3"></a>
 <a name="bp-graphs-funcs-node-limit"></a>
 #### 3.3.3 No Function Should Have More Than 50 Nodes
 
@@ -1194,7 +1180,7 @@ The following nodes are not counted as they are deemed to not increase function 
 * Function Entry
 * Self
 
-<a name="3.3.4"></a>
+<a name="3.3.3"></a>
 <a name="bp-graphs-funcs-description"></a>
 #### 3.3.4 All Public Functions Should Have A Description
 
@@ -1202,7 +1188,7 @@ This rule applies more to public facing or marketplace blueprints, so that other
 
 Simply, any function that has an access specificer of Public should have its description filled out.
 
-<a name="3.3.5"></a>
+<a name="3.3.4"></a>
 <a name="bp-graphs-funcs-plugin-category"></a>
 #### 3.3.5 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name
 
