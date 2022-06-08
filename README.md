@@ -86,7 +86,6 @@ If you have made a notable fork or translation that is not suitable for a pull r
   - [2.5 Use A `Core` Folder For Critical Blueprints And Other Assets](#structure-core)
   - [2.6 Do Not Create Folders Called `Assets` or `AssetTypes`](#structure-assettypes)
     - [2.6.1 Creating a folder named `Assets` is redundant](#2.6.1)
-    - [2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant](#2.6.2)
   - [2.7 Very Large Asset Sets Get Their Own Folder Layout](#structure-large-sets)
   - [2.8 `MaterialLibrary`](#structure-material-library)
   - [2.9 No Empty Folders](#structure-no-empty-folders)
@@ -726,17 +725,6 @@ For example, if your project requires pickups that can be placed in a level, the
 #### 2.6.1 Creating a folder named `Assets` is redundant
 
 All assets are assets.
-
-<a name="2.6.2"></a>
-#### 2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant
-
-All asset names are named with their asset type in mind. These folders offer only redundant information and the use of these folders can easily be replaced with the robust and easy to use filtering system the Content Browser provides.
-
-Want to view only static mesh in `Environment/Rocks/`? Simply turn on the Static Mesh filter. If all assets are named correctly, they will also be sorted in alphabetical order regardless of prefixes. Want to view both static meshes and skeletal meshes? Simply turn on both filters. This eliminates the need to potentially have to `Control-Click` select two folders in the Content Browser's tree view.
-
-> This also extends the full path name of an asset for very little benefit. The `T_` prefix for a texture is only two characters, whereas `Meshes/` is seven characters.
-
-Not doing this also prevents the inevitability of someone putting a static mesh or a texture in a `Materials` folder.
 
 <a name="2.7"></a>
 <a name="structure-large-sets"></a>
